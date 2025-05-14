@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ambiqua - Riego Inteligente</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="scripts.js" defer></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="navbar-container">
+      <div class="logo">
+        <img src="images/letraA.png" alt="Ambiqua Logo" class="logo-img">
+        <span class="logo-text">Ambiqua</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#features" class="nav-link">
+          <i class="fas fa-star nav-icon"></i>
+          <span class="nav-text">Características</span>
+        </a>
+        <a href="#about" class="nav-link">
+          <i class="fas fa-users nav-icon"></i>
+          <span class="nav-text">Quiénes Somos</span>
+        </a>
+        <a href="#services" class="nav-link">
+          <i class="fas fa-cogs nav-icon"></i>
+          <span class="nav-text">Servicios</span>
+        </a>
+        <a href="#app" class="nav-link">
+          <i class="fas fa-mobile-alt nav-icon"></i>
+          <span class="nav-text">Nuestra App</span>
+        </a>
+        <a href="#contact" class="nav-link">
+          <i class="fas fa-envelope nav-icon"></i>
+          <span class="nav-text">Contáctanos</span>
+        </a>
+      </nav>
+      <div class="nav-buttons">
+        <button class="theme-toggle">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="cta-button">
+          <span>Unirse</span>
+          <i class="fas fa-arrow-right cta-icon"></i>
+        </button>
+      </div>
+      <button class="mobile-menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-background">
+      <div class="hero-shape shape-1"></div>
+      <div class="hero-shape shape-2"></div>
+      <div class="hero-shape shape-3"></div>
+    </div>
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="fas fa-leaf badge-icon"></i>
+          <span class="badge-text">Innovación en Riego Inteligente 📱</span>
+        </div>
+        <h1 class="hero-title">
+          <span class="title-line">Riego Automático</span>
+          <span class="title-line highlight">Inteligente 💡</span>
+        </h1>
+        <p class="hero-subtitle">Controla y optimiza el riego de tus cultivos y plantas desde cualquier lugar con nuestra aplicación.</p>
+        <div class="hero-buttons">
+          <button class="btn-primary">
+            <span>Comenzar Ahora</span>
+            <i class="fas fa-arrow-right btn-icon"></i>
+          </button>
+          <button class="btn-secondary">
+            <span>Ver Demo</span>
+            <i class="fas fa-play btn-icon"></i>
+          </button>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <i class="fas fa-robot stat-icon"></i>
+            <span class="stat-number">100%</span>
+            <span class="stat-text">Automatizado</span>
+          </div>
+          <div class="stat-item">
+            <i class="fas fa-clock stat-icon"></i>
+            <span class="stat-number">24/7</span>
+            <span class="stat-text">Monitoreo</span>
+          </div>
+          <div class="stat-item">
+            <i class="fas fa-tint stat-icon"></i>
+            <span class="stat-number">50%</span>
+            <span class="stat-text">Ahorro de Agua</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="image-container">
+          <img src="images/logoFull.png" alt="App Preview" class="hero-img">
+          <div class="image-overlay"></div>
+        </div>
+        <div class="floating-card card-1">
+          <div class="card-icon">
+            <i class="fas fa-tint"></i>
+          </div>
+          <div class="card-content">
+            <span class="card-title">Control de Humedad</span>
+            <span class="card-subtitle">Monitoreo en tiempo real</span>
+          </div>
+        </div>
+        <div class="floating-card card-2">
+          <div class="card-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <div class="card-content">
+            <span class="card-title">App Móvil</span>
+            <span class="card-subtitle">Control desde cualquier lugar</span>
+          </div>
+        </div>
+        <div class="floating-card card-3">
+          <div class="card-icon">
+            <i class="fas fa-leaf"></i>
+          </div>
+          <div class="card-content">
+            <span class="card-title">Cultivos Saludables</span>
+            <span class="card-subtitle">Optimización automática</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span class="scroll-text">Desplázate</span>
+      <i class="fas fa-chevron-down scroll-icon"></i>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="features">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-badge">Características Principales</span>
+      <h2 class="section-title">Innovación en Cada Detalle</h2>
+      <p class="section-subtitle">Descubre cómo nuestra tecnología transforma el riego tradicional en una experiencia inteligente y eficiente.</p>
+    </div>
+    
+    <div class="features-grid">
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="feature-icon-wrapper">
+          <i class="fas fa-clock feature-icon"></i>
+          <div class="icon-bg"></div>
+        </div>
+        <div class="feature-content">
+          <h3>Monitoreo 24/7</h3>
+          <p>Sistema de sensores avanzados que monitorean en tiempo real la humedad, temperatura y condiciones del suelo.</p>
+          <ul class="feature-list">
+            <li><i class="fas fa-check"></i> Sensores de alta precisión</li>
+            <li><i class="fas fa-check"></i> Actualizaciones en tiempo real</li>
+            <li><i class="fas fa-check"></i> Historial detallado</li>
+          </ul>
+          <a href="#" class="feature-link">
+            Explorar <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="feature-icon-wrapper">
+          <i class="fas fa-mobile-alt feature-icon"></i>
+          <div class="icon-bg"></div>
+        </div>
+        <div class="feature-content">
+          <h3>Control Total desde tu Móvil</h3>
+          <p>Gestiona tu sistema de riego desde cualquier lugar con nuestra aplicación móvil intuitiva.</p>
+          <ul class="feature-list">
+            <li><i class="fas fa-check"></i> Dashboard personalizable</li>
+            <li><i class="fas fa-check"></i> Notificaciones inteligentes</li>
+            <li><i class="fas fa-check"></i> Control remoto instantáneo</li>
+          </ul>
+          <a href="#" class="feature-link">
+            Descargar App <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="feature-icon-wrapper">
+          <i class="fas fa-brain feature-icon"></i>
+          <div class="icon-bg"></div>
+        </div>
+        <div class="feature-content">
+          <h3>Inteligencia Artificial</h3>
+          <p>Algoritmos avanzados que aprenden y optimizan el riego según las necesidades específicas de tus cultivos.</p>
+          <ul class="feature-list">
+            <li><i class="fas fa-check"></i> Aprendizaje automático</li>
+            <li><i class="fas fa-check"></i> Predicción meteorológica</li>
+            <li><i class="fas fa-check"></i> Optimización continua</li>
+          </ul>
+          <a href="#" class="feature-link">
+            Saber más <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="feature-icon-wrapper">
+          <i class="fas fa-chart-line feature-icon"></i>
+          <div class="icon-bg"></div>
+        </div>
+        <div class="feature-content">
+          <h3>Análisis Avanzado</h3>
+          <p>Visualiza y analiza el rendimiento de tu sistema con gráficos interactivos y reportes detallados.</p>
+          <ul class="feature-list">
+            <li><i class="fas fa-check"></i> Gráficos en tiempo real</li>
+            <li><i class="fas fa-check"></i> Reportes personalizados</li>
+            <li><i class="fas fa-check"></i> Exportación de datos</li>
+          </ul>
+          <a href="#" class="feature-link">
+            Ver Demo <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="features-showcase" data-aos="fade-up">
+      <div class="showcase-content">
+        <div class="showcase-text">
+          <h3>Todo en un Solo Lugar</h3>
+          <p>Nuestra plataforma integra todas las herramientas necesarias para una gestión eficiente del riego.</p>
+          <div class="showcase-stats">
+            <div class="showcase-stat">
+              <span class="stat-number">99.9%</span>
+              <span class="stat-label">Uptime</span>
+            </div>
+            <div class="showcase-stat">
+              <span class="stat-number">50%</span>
+              <span class="stat-label">Ahorro de Agua</span>
+            </div>
+            <div class="showcase-stat">
+              <span class="stat-number">24/7</span>
+              <span class="stat-label">Soporte</span>
+            </div>
+          </div>
+        </div>
+        <div class="showcase-image">
+          <img src="images/dashboard-preview.png" alt="Dashboard Preview" class="showcase-img">
+          <div class="showcase-overlay"></div>
+        </div>
+      </div>
+    </div> -->
+  </section>
+
+
+    <!-- App Preview -->
+    <section id="app" class="app-preview">
+      <div class="app-container">
+        <div class="app-content" data-aos="fade-right">
+          <div class="section-header">
+            <span class="section-badge">Nuestra Aplicación</span>
+            <h2 class="section-title">Control Total en tus Manos</h2>
+            <p class="section-subtitle">Una experiencia móvil intuitiva y potente que te permite gestionar tu sistema de riego desde cualquier lugar.</p>
+          </div>
+  
+          <div class="app-features">
+            <div class="app-feature" data-aos="fade-up" data-aos-delay="100">
+              <div class="feature-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <div class="feature-details">
+                <h3>Dashboard Intuitivo</h3>
+                <p>Visualiza el estado de tus cultivos en tiempo real con gráficos interactivos y métricas clave.</p>
+              </div>
+            </div>
+  
+            <div class="app-feature" data-aos="fade-up" data-aos-delay="200">
+              <div class="feature-icon">
+                <i class="fas fa-sliders-h"></i>
+              </div>
+              <div class="feature-details">
+                <h3>Control Personalizado</h3>
+                <p>Configura y ajusta cada aspecto de tu sistema de riego según tus necesidades específicas.</p>
+              </div>
+            </div>
+  
+            <div class="app-feature" data-aos="fade-up" data-aos-delay="300">
+              <div class="feature-icon">
+                <i class="fas fa-bell"></i>
+              </div>
+              <div class="feature-details">
+                <h3>Alertas Inteligentes</h3>
+                <p>Recibe notificaciones instantáneas sobre eventos importantes y mantenimiento preventivo.</p>
+              </div>
+            </div>
+  
+            <div class="app-feature" data-aos="fade-up" data-aos-delay="400">
+              <div class="feature-icon">
+                <i class="fas fa-cloud"></i>
+              </div>
+              <div class="feature-details">
+                <h3>Sincronización en la Nube</h3>
+                <p>Accede a tus datos desde cualquier dispositivo con sincronización automática.</p>
+              </div>
+            </div>
+          </div>
+  
+          <div class="app-download">
+            <h3>Descarga Nuestra App</h3>
+            <div class="download-buttons">
+              <a href="#" class="download-btn">
+                <i class="fab fa-google-play"></i>
+                <span>Google Play</span>
+              </a>
+              <a href="#" class="download-btn">
+                <i class="fab fa-app-store"></i>
+                <span>App Store</span>
+              </a>
+            </div>
+          </div>
+        </div>
+  
+        <div class="app-showcase" data-aos="fade-left">
+          <div class="showcase-devices">
+            <div class="device phone">
+              <img src="images/app-screenshot1.png" alt="App Dashboard" class="device-screen">
+              <div class="device-frame"></div>
+            </div>
+            <div class="device tablet">
+              <img src="images/app-screenshot2.png" alt="App Analytics" class="device-screen">
+              <div class="device-frame"></div>
+            </div>
+          </div>
+          <div class="showcase-overlay"></div>
+        </div>
+      </div>
+    </section>
+
+
+  <!-- About -->
+  <section id="about" class="about">
+    <div class="about-container">
+      <div class="about-content" data-aos="fade-right">
+        <div class="section-header">
+          <span class="section-badge">Nuestra Historia</span>
+          <h2 class="section-title">Innovando el Futuro del Riego</h2>
+        </div>
+        <p class="about-text">En Ambiqua, combinamos la pasión por la agricultura con la innovación tecnológica para crear soluciones que transforman la manera en que se gestiona el riego. Nuestra misión es hacer que la agricultura sea más eficiente, sostenible y accesible para todos.</p>
+        
+        <div class="about-values">
+          <div class="value-item">
+            <i class="fas fa-leaf value-icon"></i>
+            <h4>Sostenibilidad</h4>
+            <p>Comprometidos con el medio ambiente y el uso responsable de recursos.</p>
+          </div>
+          <div class="value-item">
+            <i class="fas fa-lightbulb value-icon"></i>
+            <h4>Innovación</h4>
+            <p>Constante desarrollo de nuevas tecnologías y soluciones.</p>
+          </div>
+          <div class="value-item">
+            <i class="fas fa-users value-icon"></i>
+            <h4>Comunidad</h4>
+            <p>Construyendo una red de agricultores conectados y empoderados.</p>
+          </div>
+          <div class="value-item">
+            <i class="fas fa-microchip value-icon"></i>
+            <h4>Automatización</h4>
+            <p>Usamos microcontroladores como el ESP32 para crear sistemas de riego automáticos y eficientes.</p>
+          </div>
+        </div>
+
+        <div class="about-stats">
+          <div class="about-stat" data-aos="zoom-in" data-aos-delay="100">
+            <div class="stat-circle">
+              <span class="stat-number">1000+</span>
+              <span class="stat-label">Usuarios Activos</span>
+            </div>
+          </div>
+          <div class="about-stat" data-aos="zoom-in" data-aos-delay="200">
+            <div class="stat-circle">
+              <span class="stat-number">50+</span>
+              <span class="stat-label">Proyectos Exitosos</span>
+            </div>
+          </div>
+          <div class="about-stat" data-aos="zoom-in" data-aos-delay="300">
+            <div class="stat-circle">
+              <span class="stat-number">98%</span>
+              <span class="stat-label">Satisfacción</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-media" data-aos="fade-left">
+        <div class="media-container">
+          <img src="images/team.jpg" alt="Equipo Ambiqua" class="about-img">
+          <div class="media-overlay">
+            <div class="overlay-content">
+              <i class="fas fa-play-circle overlay-icon"></i>
+              <span>Ver Nuestra Historia</span>
+            </div>
+          </div>
+        </div>
+        <div class="media-cards">
+          <!-- <div class="media-card" data-aos="fade-up" data-aos-delay="100">
+            <i class="fas fa-award card-icon"></i>
+            <span>Premio a la Innovación 2024</span>
+          </div>
+          <div class="media-card" data-aos="fade-up" data-aos-delay="200">
+            <i class="fas fa-certificate card-icon"></i>
+            <span>Certificación ISO 9001</span>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="services">
+    <div style="display: grid;" class="section-header" data-aos="fade-up">
+      <span class="section-badge">Nuestros Servicios</span>
+      <h2 class="section-title">Soluciones Completas</h2>
+      <p class="section-subtitle">Ofrecemos un ecosistema integral de servicios para maximizar el potencial de tu sistema de riego.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-icon-wrapper">
+          <i class="fas fa-tools service-icon"></i>
+          <div class="icon-bg"></div>
+        </div>
+        <div class="service-content">
+          <h3>Instalación Profesional</h3>
+          <p>Implementación completa de sistemas inteligentes de riego por nuestro equipo certificado.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Diseño personalizado</li>
+            <li><i class="fas fa-check"></i> Instalación certificada</li>
+            <li><i class="fas fa-check"></i> Pruebas exhaustivas</li>
+          </ul>
+          <a href="#" class="service-link">Solicitar Instalación <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-icon-wrapper">
+          <i class="fas fa-headset service-icon"></i>
+          <div class="icon-bg"></div>
+        </div>
+        <div class="service-content">
+          <h3>Soporte Premium</h3>
+          <p>Asistencia técnica 24/7 y mantenimiento preventivo para garantizar el funcionamiento óptimo.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Soporte 24/7</li>
+            <li><i class="fas fa-check"></i> Mantenimiento preventivo</li>
+            <li><i class="fas fa-check"></i> Actualizaciones gratuitas</li>
+          </ul>
+          <a href="#" class="service-link">Contactar Soporte <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="service-icon-wrapper">
+          <i class="fas fa-code service-icon"></i>
+          <div class="icon-bg"></div>
+        </div>
+        <div class="service-content">
+          <h3>Desarrollo a Medida</h3>
+          <p>Soluciones personalizadas adaptadas a las necesidades específicas de tu proyecto.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Análisis de requerimientos</li>
+            <li><i class="fas fa-check"></i> Desarrollo personalizado</li>
+            <li><i class="fas fa-check"></i> Integración con sistemas existentes</li>
+          </ul>
+          <a href="#" class="service-link">Consultar Proyecto <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="service-icon-wrapper">
+          <i class="fas fa-graduation-cap service-icon"></i>
+          <div class="icon-bg"></div>
+        </div>
+        <div class="service-content">
+          <h3>Capacitación Integral</h3>
+          <p>Programas de formación para maximizar el aprovechamiento de nuestra tecnología.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Talleres prácticos</li>
+            <li><i class="fas fa-check"></i> Material didáctico</li>
+            <li><i class="fas fa-check"></i> Certificación oficial</li>
+          </ul>
+          <a href="#" class="service-link">Ver Programas <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="services-cta" data-aos="fade-up">
+      <div class="cta-content">
+        <h3>¿Listo para Transformar tu Sistema de Riego?</h3>
+        <p>Únete a cientos de agricultores que ya están aprovechando la tecnología de Ambiqua.</p>
+        <div class="cta-buttons">
+          <button class="btn-primary">Comenzar Ahora</button>
+          <button class="btn-secondary">Agendar Demo</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <div class="contact-container">
+      <div class="contact-content" data-aos="fade-right">
+        <div class="section-header">
+          <span class="section-badge">Contáctanos</span>
+          <h2 class="section-title">Hablemos de tu Proyecto</h2>
+          <p class="section-subtitle">Estamos aquí para ayudarte a implementar la solución perfecta para tus necesidades.</p>
+        </div>
+
+        <div class="contact-info">
+          <div class="info-card" data-aos="fade-up" data-aos-delay="100">
+            <i class="fas fa-map-marker-alt info-icon"></i>
+            <div class="info-content">
+              <h3>Ubicación</h3>
+              <p>Av. Innovación 123, Ciudad</p>
+            </div>
+          </div>
+
+          <div class="info-card" data-aos="fade-up" data-aos-delay="200">
+            <i class="fas fa-phone info-icon"></i>
+            <div class="info-content">
+              <h3>Teléfono</h3>
+              <p>+123 456 7890</p>
+            </div>
+          </div>
+
+          <div class="info-card" data-aos="fade-up" data-aos-delay="300">
+            <i class="fas fa-envelope info-icon"></i>
+            <div class="info-content">
+              <h3>Email</h3>
+              <p>contacto@ambiqua.com</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="social-links" data-aos="fade-up" data-aos-delay="400">
+          <!-- <a href="#" class="social-link"><i class="fab fa-facebook"></i></a> -->
+          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="https://instagram.com/ambiqua.sas" class="social-link"><i class="fab fa-instagram"></i></a>
+          <a href="https:/tiktok.com/@ambiqua.sas" class="social-link"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+
+      <div class="contact-form-wrapper" data-aos="fade-left">
+        <form class="contact-form">
+          <div class="form-group">
+            <div class="input-wrapper">
+              <input type="text" id="name" class="form-input" required>
+              <label for="name" class="form-label">Nombre</label>
+              <i class="fas fa-user input-icon"></i>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="input-wrapper">
+              <input type="email" id="email" class="form-input" required>
+              <label for="email" class="form-label">Email</label>
+              <i class="fas fa-envelope input-icon"></i>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="input-wrapper">
+              <input type="tel" id="phone" class="form-input" required>
+              <label for="phone" class="form-label">Teléfono</label>
+              <i class="fas fa-phone input-icon"></i>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="input-wrapper">
+              <textarea id="message" class="form-input" required></textarea>
+              <label for="message" class="form-label">Mensaje</label>
+              <i class="fas fa-comment input-icon"></i>
+            </div>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            <span>Enviar Mensaje</span>
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-main">
+        <div class="footer-brand" data-aos="fade-up">
+          <div class="footer-logo">
+            <img src="images/letraA.png" alt="Ambiqua Logo" class="footer-logo-img">
+            <span class="footer-logo-text">Ambiqua</span>
+          </div>
+          <p class="footer-description">Transformando el futuro del riego con tecnología inteligente y sostenible.</p>
+          <div class="footer-social">
+            <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-column" data-aos="fade-up" data-aos-delay="100">
+            <h4>Navegación</h4>
+            <ul>
+              <li><a href="#features">Características</a></li>
+              <li><a href="#about">Quiénes Somos</a></li>
+              <li><a href="#services">Servicios</a></li>
+              <li><a href="#app">Nuestra App</a></li>
+              <li><a href="#contact">Contacto</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column" data-aos="fade-up" data-aos-delay="200">
+            <h4>Productos</h4>
+            <ul>
+              <li><a href="#">Sistema de Riego</a></li>
+              <li><a href="#">App Móvil</a></li>
+              <li><a href="#">Sensores IoT</a></li>
+              <li><a href="#">Dashboard</a></li>
+              <li><a href="#">API</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column" data-aos="fade-up" data-aos-delay="300">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="#">Términos y Condiciones</a></li>
+              <li><a href="#">Política de Privacidad</a></li>
+              <li><a href="#">Cookies</a></li>
+              <li><a href="#">Licencias</a></li>
+              <li><a href="#">Aviso Legal</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column" data-aos="fade-up" data-aos-delay="400">
+            <h4>Recursos</h4>
+            <ul>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Documentación</a></li>
+              <li><a href="#">Soporte</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Comunidad</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-info">
+          <p>&copy; 2025 Ambiqua. Todos los derechos reservados.</p>
+          <p style="font-weight: 900;">Created by Estiguar.</p>
+<!--           <div class="footer-badges">
+            <img src="images/iso-badge.png" alt="ISO Certified" class="footer-badge">
+            <img src="images/security-badge.png" alt="Security Certified" class="footer-badge">
+          </div> -->
+        </div>
+        <div class="footer-newsletter">
+          <h4>Suscríbete a nuestro Newsletter</h4>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Tu email" required>
+            <button type="submit">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="scroll-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+</body>
+</html>
