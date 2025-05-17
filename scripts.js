@@ -1,11 +1,15 @@
+// Variables globales
+const body = document.body;
+
 // Inicialización principal
 document.addEventListener('DOMContentLoaded', () => {
   // Inicializar AOS
   AOS.init({
     duration: 800,
     easing: 'ease-in-out',
-    once: true,
-    mirror: false
+    once: false,
+    mirror: true,
+    offset: 100
   });
 
   // Inicializar todas las animaciones y funcionalidades
@@ -28,6 +32,11 @@ function initializeAnimations() {
           top: offsetPosition,
           behavior: 'smooth'
         });
+
+        // Cerrar menú móvil si está abierto
+        if (isMenuOpen) {
+          toggleMenu();
+        }
       }
     });
   });
@@ -61,7 +70,6 @@ function initializeAnimations() {
 
   // Theme toggle
   const themeToggle = document.querySelector('.theme-toggle');
-  const body = document.body;
   const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
   
   // Establecer tema inicial
@@ -135,37 +143,56 @@ function initializeAnimations() {
   const observer = new IntersectionObserver(observerCallback, observerOptions);
   sections.forEach(section => observer.observe(section));
 
-  // Menú móvil
+  // Menú móvil mejorado
   const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-  const navLinksContainer = document.querySelector('.nav-links');
+  const mobileMenuClose = document.querySelector('.mobile-menu-close');
+  const mobileMenu = document.querySelector('.mobile-menu');
   let isMenuOpen = false;
 
-  mobileMenuBtn.addEventListener('click', () => {
+  function toggleMenu() {
     isMenuOpen = !isMenuOpen;
     mobileMenuBtn.classList.toggle('active');
-    navLinksContainer.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+    body.style.overflow = isMenuOpen ? 'hidden' : '';
     
     // Animar elementos del menú
-    const navItems = navLinksContainer.querySelectorAll('.nav-link');
+    const navItems = mobileMenu.querySelectorAll('.mobile-nav-link');
     navItems.forEach((item, index) => {
       if (isMenuOpen) {
-        item.style.animation = `slideInRight 0.3s ease forwards ${index * 0.1}s`;
+        item.style.animation = `slideInRight 0.5s ease forwards ${index * 0.1}s`;
       } else {
         item.style.animation = '';
       }
     });
-    
-    // Animar botón del menú
-    const spans = mobileMenuBtn.querySelectorAll('span');
-    spans.forEach((span, index) => {
+  }
+
+  mobileMenuBtn.addEventListener('click', toggleMenu);
+  mobileMenuClose.addEventListener('click', toggleMenu);
+
+  // Cerrar menú al hacer clic en un enlace
+  mobileMenu.querySelectorAll('.mobile-nav-link').forEach(link => {
+    link.addEventListener('click', () => {
       if (isMenuOpen) {
-        span.style.transform = index === 0 ? 'rotate(45deg) translate(5px, 5px)' :
-                              index === 1 ? 'scale(0)' :
-                              'rotate(-45deg) translate(5px, -5px)';
-      } else {
-        span.style.transform = '';
+        toggleMenu();
       }
     });
+  });
+
+  // Cerrar menú al hacer clic fuera
+  document.addEventListener('click', (e) => {
+    if (isMenuOpen && 
+        !mobileMenu.contains(e.target) && 
+        !mobileMenuBtn.contains(e.target) && 
+        !mobileMenuClose.contains(e.target)) {
+      toggleMenu();
+    }
+  });
+
+  // Cerrar menú al cambiar el tamaño de la ventana
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 992 && isMenuOpen) {
+      toggleMenu();
+    }
   });
 
   // Botón scroll to top
@@ -196,21 +223,18 @@ function initializeAnimations() {
 
   // Animaciones al hacer scroll
   function animateOnScroll() {
-    const elements = document.querySelectorAll('.feature-card, .service-card, .app-feature, .about-stat, .stat-item');
+    const elements = document.querySelectorAll('.feature-card, .service-card, .app-feature, .about-stat, .stat-item, .device');
     
     elements.forEach(element => {
       const elementTop = element.getBoundingClientRect().top;
       const elementBottom = element.getBoundingClientRect().bottom;
       
-      if (elementTop < window.innerHeight && elementBottom > 0) {
+      if (elementTop < window.innerHeight * 0.8 && elementBottom > 0) {
         element.classList.add('animate');
         
-        // Efecto escalonado para elementos en grid
-        if (element.parentElement.classList.contains('grid')) {
-          const items = element.parentElement.children;
-          Array.from(items).forEach((item, index) => {
-            item.style.animationDelay = `${index * 0.1}s`;
-          });
+        if (element.classList.contains('device')) {
+          const isPhone = element.classList.contains('phone');
+          element.style.animation = isPhone ? 'floatPhone 6s ease-in-out infinite' : 'floatTablet 8s ease-in-out infinite';
         }
       }
     });
@@ -375,5 +399,59 @@ function initializeAnimations() {
         card.style.boxShadow = '';
       });
     });
+  });
+
+  // Mejoras en animaciones de dispositivos
+  const devices = document.querySelectorAll('.device');
+  const showcase = document.querySelector('.showcase-devices');
+
+  function updateDeviceTransform(e) {
+    const { clientX, clientY } = e;
+    const { left, top, width, height } = showcase.getBoundingClientRect();
+    const x = (clientX - left) / width - 0.5;
+    const y = (clientY - top) / height - 0.5;
+
+    devices.forEach(device => {
+      const isPhone = device.classList.contains('phone');
+      const maxRotate = isPhone ? 5 : 15;
+      const maxTranslate = isPhone ? 10 : 20;
+
+      device.style.transform = `
+        ${isPhone ? 'translateX(-50%)' : ''}
+        rotateY(${x * maxRotate}deg)
+        rotateX(${-y * maxRotate}deg)
+        translateZ(${Math.abs(x * y * maxTranslate)}px)
+      `;
+    });
+  }
+
+  showcase.addEventListener('mousemove', updateDeviceTransform);
+  showcase.addEventListener('mouseleave', () => {
+    devices.forEach(device => {
+      device.style.transform = '';
+    });
+  });
+
+  // Parallax mejorado
+  const handleParallax = () => {
+    const scrolled = window.pageYOffset;
+    const parallaxElements = document.querySelectorAll('.hero-shape, .device');
+    
+    parallaxElements.forEach(element => {
+      const speed = element.classList.contains('shape-1') ? 0.1 :
+                   element.classList.contains('shape-2') ? 0.15 :
+                   element.classList.contains('shape-3') ? 0.2 :
+                   element.classList.contains('phone') ? 0.05 : 0.1;
+      
+      element.style.transform = `
+        translateY(${scrolled * speed}px)
+        ${element.classList.contains('device') ? 'rotateY(0deg)' : ''}
+      `;
+    });
+  };
+
+  window.addEventListener('scroll', () => {
+    animateOnScroll();
+    handleParallax();
   });
 }
