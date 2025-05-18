@@ -1925,11 +1925,12 @@ a {
 .social-links {
   display: flex;
   gap: var(--spacing-sm);
+  justify-content: space-evenly;
 }
 
 .social-link {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   background: var(--gradient-card);
   border-radius: 50%;
   display: flex;
@@ -2137,11 +2138,13 @@ textarea.form-input {
   color: var(--gray-400);
   margin-bottom: var(--spacing-md);
   line-height: 1.6;
+  text-align: center;
 }
 
 .footer-social {
   display: flex;
   gap: var(--spacing-sm);
+  justify-content: space-evenly;
 }
 
 .footer-column h4 {
