@@ -901,6 +901,13 @@ img {
   .floating-card {
     display: none;
   }
+
+  .app-download {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 30px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -2408,11 +2415,16 @@ textarea.form-input {
 
 @media (max-width: 480px) {
   .section-title {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.5rem;
+    margin: 5px 35px 0 35px;
   }
   
   .section-badge {
-    font-size: 0.8rem;
+    margin: 30px 20px 30px;
   }
   
   .feature-card,
@@ -2439,6 +2451,27 @@ textarea.form-input {
     height: 40px;
     bottom: var(--spacing-md);
     right: var(--spacing-md);
+  }
+
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 50px;
+    /* margin: 30px 10px 50px; */
+  }
+
+  .social-links {
+    justify-content: space-evenly;
+  }
+
+  .social-link {
+    justify-content: space-evenly;
+  }
+
+  .footer-social {
+    justify-content: space-evenly;
   }
 }
 
@@ -2539,8 +2572,8 @@ textarea.form-input {
 .mobile-nav-links {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-lg);
-  margin-bottom: var(--spacing-xl);
+  gap: 1rem;
+  margin-bottom: 1rem;
   margin-top: 70px;
 }
 
