@@ -2311,10 +2311,13 @@ textarea.form-input {
 }
 
 @media (max-width: 992px) {
-  .app-container,
   .about-container,
   .contact-container {
     grid-template-columns: 1fr;
+  }
+
+  .app-container {
+    display: contents;
   }
   
   .app-showcase {
@@ -2326,8 +2329,9 @@ textarea.form-input {
   }
   
   .device.phone {
-    width: 240px;
-    height: 480px;
+    width: 60%;
+    height: auto;
+    bottom: 10%;
   }
   
   .device.tablet {
@@ -2394,6 +2398,12 @@ textarea.form-input {
   .newsletter-form {
     flex-direction: column;
   }
+
+  .device.phone {
+    width: 60%;
+    height: auto;
+    bottom: 3%;
+  }
 }
 
 @media (max-width: 480px) {
@@ -2413,8 +2423,9 @@ textarea.form-input {
   }
   
   .device.phone {
-    width: 160px;
-    height: 320px;
+    width: 80%;
+    height: auto;
+    bottom: 18%;
   }
   
   .device.tablet {
