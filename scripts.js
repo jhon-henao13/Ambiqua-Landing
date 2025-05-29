@@ -68,39 +68,28 @@ function initializeAnimations() {
     lastScroll = currentScroll;
   });
 
-  // Theme toggle
-  const themeToggle = document.querySelector('.theme-toggle');
+
+  // Theme
+
+  const body = document.body;
+  const themeToggleCheckbox = document.querySelector('#theme-toggle-switch');
   const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
   
   // Establecer tema inicial
-  if (localStorage.getItem('theme') === 'light' || 
-      (!localStorage.getItem('theme') && !prefersDarkScheme.matches)) {
-    body.classList.add('light-theme');
-    themeToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
-  }
-
-  themeToggle.addEventListener('click', () => {
-    const isLight = body.classList.toggle('light-theme');
-    const icon = themeToggle.querySelector('i');
-    
-    // Animar icono
-    icon.style.transform = 'rotate(360deg) scale(1.2)';
-    setTimeout(() => {
-      icon.style.transform = 'rotate(0) scale(1)';
-    }, 500);
-    
-    // Cambiar icono
-    icon.classList.toggle('fa-moon');
-    icon.classList.toggle('fa-sun');
-    
-    // Guardar preferencia
-    localStorage.setItem('theme', isLight ? 'light' : 'dark');
-    
-    // Actualizar colores
-    updateThemeColors(isLight);
+  const savedTheme = localStorage.getItem('theme');
+  const isLight = savedTheme === 'light' || (!savedTheme && !prefersDarkScheme.matches);
+  body.classList.toggle('light-theme', isLight);
+  themeToggleCheckbox.checked = isLight;
+  
+  // Cambiar tema al hacer clic
+  themeToggleCheckbox.addEventListener('change', () => {
+    const isLightMode = themeToggleCheckbox.checked;
+    body.classList.toggle('light-theme', isLightMode);
+    localStorage.setItem('theme', isLightMode ? 'light' : 'dark');
+    updateThemeColors(isLightMode);
   });
-
-  // Función para actualizar colores según el tema
+  
+  // Actualizar colores personalizados
   function updateThemeColors(isLight) {
     const elements = document.querySelectorAll('.feature-card, .service-card, .app-feature');
     elements.forEach(element => {
@@ -108,6 +97,42 @@ function initializeAnimations() {
       element.style.background = isLight ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.2)';
     });
   }
+  
+
+
+  const el = document.getElementById('hero-image')
+  const height = el.clientHeight
+  const width = el.clientWidth
+
+  el.addEventListener('mousemove', (evt) => {
+    const {layerX, layerY} = evt
+
+    const yRotation = (
+      (layerX - width / 2) / width
+    ) * 20
+
+    const xRotation = (
+      (layerY - height / 2) / height
+    ) * 20
+
+
+    const string = `
+      perspective(500px)
+      scale(1.05)
+      rotateX(${xRotation}deg)
+      rotateY(${yRotation}deg)`
+
+    el.style.transform = string
+
+  })
+
+  el.addEventListener('mouseout', () => {
+    el.style.transform = `
+      perspective(500px)
+      scale(1)
+      rotateX(0)
+      rotateY(0)`
+  })
 
   // Scrollspy
   const sections = document.querySelectorAll('section');
