@@ -220,7 +220,8 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--gradient-1);
+  background: var(--bg-dark);
+  color: var(--bg-dark);
   opacity: 0;
   transition: var(--transition-fast);
   z-index: -1;
@@ -260,6 +261,7 @@ img {
 .nav-link:hover .nav-text::after,
 .nav-link.active .nav-text::after {
   width: 100%;
+  color: var(--bg-dark);
 }
 
 .nav-buttons {
@@ -338,7 +340,7 @@ img {
 
 /* Hero Section Mejorado */
 .hero {
-  min-height: 100vh;
+  min-height: 120vh;
   position: relative;
   overflow: hidden;
   padding-top: 80px;
@@ -394,8 +396,8 @@ img {
   padding: 4rem 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
+  gap: 5rem;
+  align-items: flex-start;
 }
 
 .hero-badge {
@@ -517,8 +519,9 @@ img {
 .hero-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 7rem;
   animation: fadeInUp 0.8s ease-out 0.6s backwards;
+  padding: 0 150px;
 }
 
 .stat-item {
@@ -587,6 +590,7 @@ img {
 .hero-image {
   position: relative;
   animation: fadeInRight 0.8s ease-out;
+  top: 120px;
 }
 
 .image-container {
@@ -699,7 +703,7 @@ img {
 
 .hero-scroll {
   position: absolute;
-  bottom: 2rem;
+  bottom: 1rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -1502,7 +1506,7 @@ section {
 .cta-content p {
   color: var(--gray-300);
   margin-bottom: var(--spacing-lg);
-  max-width: 600px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
   font-size: 23px;
@@ -3175,6 +3179,67 @@ textarea.form-input {
   border-radius: 200px;
 }
 
+
+.nav-link:hover {
+  background: var(--tertiary);
+  box-shadow: 0 0 30px 5px var(--tertiary);
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  color: var(--bg-dark);
+}
+
+.nav-icon:hover {
+  color: var(--bg-dark);
+}
+
+
+.nav-link:hover::before {
+  -webkit-animation: sh02 0.5s 0s linear;
+  -moz-animation: sh02 0.5s 0s linear;
+  animation: sh02 0.5s 0s linear;
+}
+
+.nav-link::before {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 86%;
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  opacity: 0;
+  background: #fff;
+  box-shadow: 0 0 50px 30px #fff;
+  -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  -o-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+}
+
+@keyframes sh02 {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+
+.nav-link:active {
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: box-shadow 0.2s ease-in;
+  -moz-transition: box-shadow 0.2s ease-in;
+  transition: box-shadow 0.2s ease-in;
+}
 
 
 
