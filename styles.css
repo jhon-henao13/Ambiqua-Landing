@@ -3535,3 +3535,106 @@ textarea.form-input {
     font-size: 1.3rem;
   }
 }
+
+/* Loader Animado Ambiqua */
+#loader {
+  position: fixed;
+  z-index: 99999;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #024023 0%, #4EBF96 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.8s cubic-bezier(0.4,0,0.2,1), visibility 0.8s cubic-bezier(0.4,0,0.2,1);
+}
+#loader.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.loader-logo-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.loader-logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 30px;
+  box-shadow: 0 0 60px 10px #4EBF96, 0 0 0 10px rgba(92,242,115,0.1);
+  animation: loaderLogoPulse 2s infinite alternate, loaderLogoSpin 2.5s linear infinite;
+  background: transparent;
+  z-index: 2;
+}
+.loader-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, #5CF27355 0%, #02402300 80%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(10px);
+  z-index: 1;
+  animation: loaderGlow 2.5s infinite alternate;
+}
+.loader-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 160px;
+  height: 160px;
+  border: 6px solid rgba(255,255,255,0.08);
+  border-top: 6px solid #5CF273;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: loaderSpin 1.2s linear infinite;
+  z-index: 0;
+}
+.loader-text {
+  font-family: 'Montserrat', 'Quicksand', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-top: 1.5rem;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #4EBF96, #5CF273, #79F28B, #4EBF96);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: loaderTextShimmer 2.5s linear infinite;
+  text-align: center;
+  text-shadow: 0 2px 10px #02402399;
+}
+@keyframes loaderLogoPulse {
+  0% { box-shadow: 0 0 60px 10px #4EBF96, 0 0 0 10px rgba(92,242,115,0.1); }
+  100% { box-shadow: 0 0 100px 30px #5CF273, 0 0 0 20px rgba(92,242,115,0.2); }
+}
+@keyframes loaderLogoSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes loaderGlow {
+  0% { opacity: 0.7; filter: blur(10px); }
+  100% { opacity: 1; filter: blur(20px); }
+}
+@keyframes loaderSpin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+@keyframes loaderTextShimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+@media (max-width: 600px) {
+  .loader-logo { width: 80px; height: 80px; }
+  .loader-glow, .loader-spinner { width: 110px; height: 110px; }
+  .loader-text { font-size: 1.1rem; }
+}

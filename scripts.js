@@ -14,7 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Inicializar todas las animaciones y funcionalidades
   initializeAnimations();
+
+  // Loader animado Ambiqua
+  hideLoader();
 });
+
+window.addEventListener('load', hideLoader);
 
 // Función principal de inicialización
 function initializeAnimations() {
@@ -479,4 +484,13 @@ function initializeAnimations() {
     animateOnScroll();
     handleParallax();
   });
+}
+
+// Loader animado Ambiqua
+function hideLoader() {
+  const loader = document.getElementById('loader');
+  if (loader) {
+    loader.classList.add('hide');
+    setTimeout(() => loader.remove(), 900);
+  }
 }
