@@ -340,7 +340,7 @@ img {
 
 /* Hero Section Mejorado */
 .hero {
-  min-height: 120vh;
+  min-height: 105vh;
   position: relative;
   overflow: hidden;
   padding-top: 80px;
@@ -560,7 +560,7 @@ img {
 .stat-icon {
   font-size: 2rem;
   color: var(--primary);
-  margin-bottom: 1rem;
+  margin-top: 1rem;
   position: relative;
   z-index: 1;
   animation: float 8s ease-in-out infinite;
@@ -576,11 +576,11 @@ img {
   z-index: 1;
   background: var(--gradient-text);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  
 }
 
 .stat-text {
-  font-size: 1.1rem;
+  font-size: 1.7rem;
   font-weight: 900;
   opacity: 0.8;
   position: relative;
@@ -1198,7 +1198,7 @@ section {
 
 .about-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 0fr;
   gap: var(--spacing-xl);
   align-items: center;
   max-width: 1400px;
