@@ -15,6 +15,61 @@ document.addEventListener('DOMContentLoaded', () => {
   // Inicializar todas las animaciones y funcionalidades
   initializeAnimations();
 
+
+  tsParticles.load("tsparticles", {
+    fullScreen: { enable: false },
+    background: { color: { value: "transparent" } },
+    fpsLimit: 60,
+    particles: {
+      number: {
+        value: 80,
+        density: { enable: true, area: 800 }
+      },
+      color: { value: "#00ffb9" },
+      shape: { type: "circle" },
+      opacity: {
+        value: 0.4,
+        random: true,
+        anim: { enable: false }
+      },
+      size: {
+        value: { min: 1, max: 3 },
+        random: true
+      },
+      move: {
+        enable: true,
+        speed: 0.7,
+        direction: "none",
+        outModes: { default: "out" }
+      },
+      links: {
+        enable: true,
+        distance: 120,
+        color: "#00ffb9",
+        opacity: 0.3,
+        width: 1
+      }
+    },
+    interactivity: {
+      events: {
+        onHover: { enable: true, mode: "grab" },
+        onClick: { enable: true, mode: "push" }
+      },
+      modes: {
+        grab: { distance: 140, links: { opacity: 0.5 } },
+        push: { quantity: 4 }
+      }
+    },
+    detectRetina: true
+  });
+  
+
+
+
+
+
+
+
   // Loader animado Ambiqua
   hideLoader();
 });

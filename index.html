@@ -17,6 +17,8 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9801535106508814"
      crossorigin="anonymous"></script>
 
+  <!-- Partículas - tsParticles CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
 
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script src="scripts.js" defer></script>
@@ -152,20 +154,35 @@
 
   <!-- Hero -->
   <section class="hero">
+
+    <!-- Contenedor de partículas -->
+    <div id="tsparticles"></div>
+
     <div class="hero-background">
       <div class="hero-shape shape-1"></div>
       <div class="hero-shape shape-2"></div>
       <div class="hero-shape shape-3"></div>
     </div>
     <div class="hero-container">
-      <div class="hero-content">
+
+      <div class="corner-glow top-left"></div>
+      <div class="corner-glow bottom-right"></div>
+
+      <div class="hero-content" data-aos="fade-right">
         <div class="hero-badge">
           <i class="fas fa-leaf badge-icon"></i>
-          <span class="badge-text">Innovación en Riego Inteligente 📱</span>
+          <span class="badge-text">Riego inteligente para un futuro verde 📱</span>
         </div>
+
+        
+
+        <div class="svg-glow-title"></div>
         <h1 class="hero-title">
-          <span class="title-line">Tu cultivo, tu control.</span>
-          <span class="title-line highlight">Riego inteligente desde tu app 💡</span>
+
+
+          <span class="title-line">Automatiza tus cultivos con</span>
+           
+          <span class="title-line highlight">Riego inteligente y control desde tu app 💡</span>
         </h1>
         <p class="hero-subtitle">Controla y optimiza el riego de tus cultivos y plantas desde cualquier lugar con nuestra aplicación.</p>
         <div class="hero-buttons">
@@ -202,11 +219,10 @@
 
       </div>
 
-      <div class="hero-image" id="hero-image">
-        <div class="image-container">
-          <img src="images/logo_ambiqua3.jpeg" alt="App Preview" class="hero-img">
-          <div class="image-overlay"></div>
-        </div>
+
+      <div class="svg-dashboard-wrapper" id="hero-image" data-aos="fade-left">
+        <div class="svg-glow"></div>
+        <img src="images/mockup-dashboard.png" alt="App Dashboard" class="dashboard-svg" />
 
         <div class="floating-card card-1">
           <div class="card-icon">
@@ -381,13 +397,25 @@
 
   <!-- App Preview -->
   <section id="app" class="app-preview">
-    <div class="app-container">
-      <div class="app-content" data-aos="fade-right">
-        <div class="section-header">
+
+    <div class="section-header">
           <span class="section-badge">Nuestra Aplicación</span>
           <h2 class="section-title">Control Total en tus Manos</h2>
           <p class="section-subtitle">Una experiencia móvil intuitiva y potente que te permite gestionar tu sistema de riego desde cualquier lugar.</p>
         </div>
+
+
+    <div class="app-container">
+
+      
+
+
+      <div class="app-content" data-aos="fade-right">
+        <!-- <div class="section-header">
+          <span class="section-badge">Nuestra Aplicación</span>
+          <h2 class="section-title">Control Total en tus Manos</h2>
+          <p class="section-subtitle">Una experiencia móvil intuitiva y potente que te permite gestionar tu sistema de riego desde cualquier lugar.</p>
+        </div> -->
 
         <div class="app-features">
           <div class="app-feature" data-aos="fade-up" data-aos-delay="100">
@@ -451,23 +479,38 @@
         
       </div>
 
-      <div style="padding-top: 50%;" class="app-showcase" data-aos="fade-left">
+      <!-- <div style="padding-top: 50%;" class="app-showcase" data-aos="fade-left">
         <div class="showcase-devices">
           <div class="device phone" id="app-preview">
             <div class="device-screen">
-              <img src="images/dashboardMovil-min.png" alt="App Dashboard" class="device-screen-img">
+              <img src="images/mockup-cultivos.png" alt="App Dashboard" class="device-screen-img">
               <div class="device-frame"></div>
             </div>
           </div>
-          <div class="device tablet">
-            <div class="device-screen">
-              <img src="images/app-screenshot2.png" alt="App Analytics" class="device-screen-img">
-              <div class="device-frame"></div>
-            </div>
-          </div>
+          
         </div>
         <div class="showcase-overlay"></div>
+      </div> -->
+
+
+      <div data-aos="fade-left">
+        <div class="showcase-devices">
+          <div class="svg-dashboard-wrapper-2" id="hero-image">
+            <div class="svg-glow"></div>
+              <img src="images/mockup-cultivos.png" alt="App Dashboard" class="device-screen-img">
+              
+            </div>
+          
+          
+        </div>
+        
       </div>
+<!-- 
+      <div class="svg-dashboard-wrapper" id="hero-image">
+        <div class="svg-glow"></div>
+        <img src="images/mockup-dashboard.png" alt="App Dashboard" class="dashboard-svg" /> -->
+
+      
     </div>
   </section>
 
@@ -495,7 +538,7 @@
           <div class="value-item">
             <i class="fas fa-users value-icon"></i>
             <h4>Comunidad</h4>
-            <p>Construyendo una red de agricultores conectados y empoderados.</p>
+            <p>Construyendo una red de agricultores conectados y modernos.</p>
           </div>
           <div class="value-item">
             <i class="fas fa-microchip value-icon"></i>
@@ -519,7 +562,7 @@
           </div>
           <div class="about-stat" data-aos="zoom-in" data-aos-delay="300">
             <div class="stat-circle">
-              <span class="stat-number">98%</span>
+              <span class="stat-number">100%</span>
               <span class="stat-label">Satisfacción</span>
             </div>
           </div>
