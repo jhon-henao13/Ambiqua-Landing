@@ -22,13 +22,13 @@ document.addEventListener('DOMContentLoaded', () => {
     fpsLimit: 60,
     particles: {
       number: {
-        value: 80,
+        value: 75,
         density: { enable: true, area: 800 }
       },
       color: { value: "#00ffb9" },
       shape: { type: "circle" },
       opacity: {
-        value: 0.4,
+        value: 0.8,
         random: true,
         anim: { enable: false }
       },
