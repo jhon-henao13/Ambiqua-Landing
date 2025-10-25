@@ -359,7 +359,6 @@ function initializeAnimations() {
   });
 
   contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
     
     const submitBtn = contactForm.querySelector('button[type="submit"]');
     const originalText = submitBtn.innerHTML;
@@ -394,7 +393,6 @@ function initializeAnimations() {
   const newsletterForm = document.querySelector('.newsletter-form');
   if (newsletterForm) {
     newsletterForm.addEventListener('submit', (e) => {
-      e.preventDefault();
       const input = newsletterForm.querySelector('input');
       const button = newsletterForm.querySelector('button');
       

@@ -464,11 +464,11 @@
         </div>
 
         <div class="app-download" data-aos="fade-up" data-aos-delay="500">
-          <h3>Visita Nuestra App</h3>
+          <h3>Ingresa a nuestra App</h3>
 
 
           <div class="download-buttons">
-            <a href="#" class="download-btn animated-button" data-aos="zoom-in" data-aos-delay="600">
+            <a href="https://estiguar17.pythonanywhere.com" class="download-btn animated-button" data-aos="zoom-in" data-aos-delay="600">
               <i class="fas fa-mobile-alt"></i>
               <span> Ambiqua </span>
               <i class="fas fa-globe"></i>
@@ -852,12 +852,12 @@
       <div class="contact-form-wrapper" data-aos="fade-left">
         <form action="https://api.staticforms.xyz/submit" method="POST" class="contact-form">
           <!-- API Key -->
-          <input type="hidden" name="accessKey" value="sf_0n9mj7i2i95fm5amgk82652e">
+          <input type="hidden" name="apiKey" value="sf_0n9mj7i2i95fm5amgk82652e">
 
           <!-- Opcional: redireccionar después del envío -->
           <input type="hidden" name="redirectTo" value="https://henao-ambiqua.vercel.app/">
 
-          <!-- Nombre -->
+          <!-- Campos del formulario -->
           <div class="form-group">
             <div class="input-wrapper">
               <input name="name" type="text" id="name" class="form-input" required>
@@ -865,8 +865,7 @@
               <i class="fas fa-user input-icon"></i>
             </div>
           </div>
-        
-          <!-- Email -->
+
           <div class="form-group">
             <div class="input-wrapper">
               <input type="email" id="email" class="form-input" name="email" required>
@@ -874,8 +873,7 @@
               <i class="fas fa-envelope input-icon"></i>
             </div>
           </div>
-        
-          <!-- Teléfono -->
+
           <div class="form-group">
             <div class="input-wrapper">
               <input type="tel" id="phone" class="form-input" name="phone" required>
@@ -883,8 +881,7 @@
               <i class="fas fa-phone input-icon"></i>
             </div>
           </div>
-        
-          <!-- Mensaje -->
+
           <div class="form-group">
             <div class="input-wrapper">
               <textarea id="message" name="message" class="form-input" required></textarea>
@@ -892,20 +889,16 @@
               <i class="fas fa-comment input-icon"></i>
             </div>
           </div>
-
-          <input type="text" name="honeypot" style="display:none">
-
-          <div class="g-recaptcha" data-sitekey="6LebockrAAAAAG3OW-Xp8kUqrl64k990hmR8ucB-"></div>
-
         
-          <!-- Botón -->
+          <input type="text" name="honeypot" style="display:none">
+        
+          <div class="g-recaptcha" data-sitekey="6LebockrAAAAAG3OW-Xp8kUqrl64k990hmR8ucB-"></div>
+        
           <button type="submit" class="submit-btn animated-button">
             <span>Enviar Mensaje</span>
             <i class="fas fa-paper-plane"></i>
           </button>
         </form>
-
-
 
       </div>
     </div>
